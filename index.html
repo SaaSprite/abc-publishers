@@ -10,12 +10,17 @@
         :root { --primary: #2c5da7; --bg: #f4f7f9; --white: #ffffff; }
         body { font-family: 'Cairo', sans-serif; background-color: var(--bg); margin: 0; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; min-height: 100vh; }
         .container { width: 100%; max-width: 400px; text-align: center; }
-        .logo { width: 110px; height: 110px; border-radius: 50%; background: var(--white); padding: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        /* استخدام اسم الملف الذي ذكرته للوغو */
+        .logo { width: 110px; height: 110px; border-radius: 50%; background: var(--white); padding: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 20px; object-fit: contain; }
         h1 { font-size: 1.3rem; color: var(--primary); margin: 10px 0; }
         .description { font-size: 0.95rem; color: #555; margin-bottom: 30px; line-height: 1.6; }
         .links { display: flex; flex-direction: column; gap: 15px; }
         .btn { background: var(--white); color: var(--primary); text-decoration: none; padding: 16px; border-radius: 50px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 12px; transition: 0.3s; border: 1px solid #e1e8ed; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
         .btn:hover { background: var(--primary); color: var(--white); transform: translateY(-2px); }
+        /* زر الكتالوج بلون مميز لجذب الانتباه */
+        .btn-catalog { background-color: #e67e22; color: white; border: none; }
+        .btn-catalog:hover { background-color: #d35400; color: white; }
+        
         .social { margin-top: 35px; display: flex; justify-content: center; gap: 25px; }
         .social a { color: var(--primary); font-size: 1.6rem; transition: 0.3s; }
         .social a:hover { transform: scale(1.2); }
@@ -24,23 +29,24 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://abc-publishers.com/wp-content/uploads/2021/04/cropped-Untitled-1-1.png" alt="ألف باء تاء" class="logo">
+        <img src="ABC-Publishers Logo.jpg" alt="ألف باء تاء" class="logo">
         <h1>ألف باء تاء ناشرون</h1>
-        <p class="description">مؤسسة تربوية تُعنى بإنتاج وتوزيع الوسائل التعليمية والقصص للمرحلة العمرية المبكرة واليافعين.</p>
+        <p class="description">مؤسسة تربوية تُعنى بإنتاج وتوزيع الوسائل التعليمية والقصص</p>
         
         <div class="links">
-            <a href="https://abc-publishers.com/" class="btn" target="_blank"><i class="fas fa-globe"></i> الموقع الرسمي والمتجر</a>
-            <a href="https://wa.me/962797221332" class="btn" target="_blank"><i class="fab fa-whatsapp"></i> اطلب عبر واتساب</a>
-            <a href="https://abc-publishers.com/store/" class="btn" target="_blank"><i class="fas fa-book"></i> تصفح جميع السلاسل</a>
-            <a href="mailto:info@abc-publishers.com" class="btn"><i class="fas fa-envelope"></i> مراسلتنا عبر البريد</a>
+            <a href="https://abc-publishers.com/" class="btn" target="_blank"><i class="fas fa-globe"></i> الموقع الرسمي</a>
+            <a href="https://wa.me/962795626802" class="btn" target="_blank"><i class="fab fa-whatsapp"></i> اطلب عبر واتساب</a>
+            <a href="https://www.facebook.com/alefbaataaa/" class="btn" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
+            <a href="https://www.instagram.com/abcpublishing/" class="btn" target="_blank"><i class="fab fa-instagram"></i> انستاغرام</a>
+            <a href="رابط_جوجل_درايف_هنا" class="btn btn-catalog" target="_blank"><i class="fas fa-file-pdf"></i> تحميل الكتالوج</a>
         </div>
 
         <div class="social">
-            <a href="https://www.facebook.com/abt.publishers" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/abt_publishers" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="tel:+962797221332"><i class="fas fa-phone"></i></a>
+            <a href="https://x.com/abcpublishers" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="mailto:abcpublishing@hotmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+962795626802"><i class="fas fa-phone"></i></a>
         </div>
     </div>
-    <footer>© 2026 ألف باء تاء ناشرون</footer>
+    <footer>© 2026 جميع الحقوق محفوظة لدار ألف باء تاء ناشرون</footer>
 </body>
 </html>
