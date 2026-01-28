@@ -3,50 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ألف باء تاء ناشرون - روابط التواصل</title>
+    <title>ألف باء تاء ناشرون | Alef Baa Taa Publishers</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #2c5da7; --bg: #f4f7f9; --white: #ffffff; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); margin: 0; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; min-height: 100vh; }
-        .container { width: 100%; max-width: 400px; text-align: center; }
-        /* استخدام اسم الملف الذي ذكرته للوغو */
-        .logo { width: 110px; height: 110px; border-radius: 50%; background: var(--white); padding: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 20px; object-fit: contain; }
-        h1 { font-size: 1.3rem; color: var(--primary); margin: 10px 0; }
-        .description { font-size: 0.95rem; color: #555; margin-bottom: 30px; line-height: 1.6; }
-        .links { display: flex; flex-direction: column; gap: 15px; }
-        .btn { background: var(--white); color: var(--primary); text-decoration: none; padding: 16px; border-radius: 50px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 12px; transition: 0.3s; border: 1px solid #e1e8ed; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
-        .btn:hover { background: var(--primary); color: var(--white); transform: translateY(-2px); }
-        /* زر الكتالوج بلون مميز لجذب الانتباه */
-        .btn-catalog { background-color: #e67e22; color: white; border: none; }
-        .btn-catalog:hover { background-color: #d35400; color: white; }
+        :root { --primary: #2c5da7; --bg: #f4f7f9; --white: #ffffff; --orange: #e67e22; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 20px; }
         
-        .social { margin-top: 35px; display: flex; justify-content: center; gap: 25px; }
-        .social a { color: var(--primary); font-size: 1.6rem; transition: 0.3s; }
-        .social a:hover { transform: scale(1.2); }
-        footer { margin-top: auto; padding-top: 40px; font-size: 0.8rem; color: #888; }
+        /* زر تبديل اللغة */
+        .lang-switch { position: absolute; top: 20px; right: 20px; }
+        [dir="ltr"] .lang-switch { right: auto; left: 20px; }
+        .lang-btn { background: var(--primary); color: white; border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-family: inherit; font-weight: bold; }
+
+        .container { width: 100%; max-width: 400px; text-align: center; margin-top: 40px; }
+        .logo { width: 110px; height: 110px; border-radius: 50%; background: var(--white); padding: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 15px; }
+        
+        h1 { font-size: 1.3rem; color: var(--primary); margin: 10px 0; }
+        p { font-size: 0.95rem; color: #555; margin-bottom: 25px; line-height: 1.5; padding: 0 10px; }
+        
+        .links { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+        .btn { background: var(--white); color: var(--primary); text-decoration: none; padding: 14px; border-radius: 50px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; border: 1px solid #e1e8ed; font-size: 0.95rem; }
+        .btn:hover { background: var(--primary); color: var(--white); transform: translateY(-2px); }
+        .btn-catalog { background-color: var(--orange); color: white; border: none; }
+        .btn-catalog:hover { background-color: #d35400; }
+
+        /* الأيقونات السفلية */
+        .social { margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .social a { color: var(--primary); font-size: 1.4rem; transition: 0.3s; width: 45px; height: 45px; background: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-decoration: none; }
+        .social a:hover { transform: scale(1.1); color: var(--orange); }
+
+        /* الفوتر - تم حل مشكلة المسافة */
+        footer { margin-top: 40px; padding: 20px 0; font-size: 0.75rem; color: #888; width: 100%; text-align: center; }
+
+        /* تحسينات الموبايل */
+        @media (max-width: 480px) {
+            .container { margin-top: 60px; }
+            h1 { font-size: 1.15rem; }
+            .btn { padding: 12px; font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
+
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="toggleLang()" id="langBtn">English</button>
+    </div>
+
     <div class="container">
-        <img src="ABC-Publishers Logo.jpg" alt="ألف باء تاء" class="logo">
-        <h1>ألف باء تاء ناشرون</h1>
-        <p class="description">مؤسسة تربوية تُعنى بإنتاج وتوزيع الوسائل التعليمية والقصص</p>
+        <img src="ABC-Publishers Logo.jpg" alt="Logo" class="logo">
         
-        <div class="links">
-            <a href="https://abc-publishers.com/" class="btn" target="_blank"><i class="fas fa-globe"></i> الموقع الرسمي</a>
-            <a href="https://wa.me/962795626802" class="btn" target="_blank"><i class="fab fa-whatsapp"></i> اطلب عبر واتساب</a>
-            <a href="https://www.facebook.com/alefbaataaa/" class="btn" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
-            <a href="https://www.instagram.com/abcpublishing/" class="btn" target="_blank"><i class="fab fa-instagram"></i> انستاغرام</a>
-            <a href="رابط_جوجل_درايف_هنا" class="btn btn-catalog" target="_blank"><i class="fas fa-file-pdf"></i> تحميل الكتالوج</a>
+        <div id="content-ar">
+            <h1>ألف باء تاء ناشرون</h1>
+            <p>مؤسسة تربوية تُعنى بإنتاج وتوزيع الوسائل التعليمية والقصص</p>
+            <div class="links">
+                <a href="https://abc-publishers.com/" class="btn" target="_blank"><i class="fas fa-globe"></i> الموقع الرسمي</a>
+                <a href="https://wa.me/962795626802" class="btn" target="_blank"><i class="fab fa-whatsapp"></i> اطلب عبر واتساب</a>
+                <a href="https://www.facebook.com/alefbaataaa/" class="btn" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
+                <a href="https://www.instagram.com/abcpublishing/" class="btn" target="_blank"><i class="fab fa-instagram"></i> انستاغرام</a>
+                <a href="https://x.com/abcpublishers" class="btn" target="_blank"><i class="fab fa-x-twitter"></i> منصة إكس (تويتر)</a>
+                <a href="رابط_الكتالوج_هنا" class="btn btn-catalog" target="_blank"><i class="fas fa-file-pdf"></i> تحميل الكتالوج</a>
+            </div>
+        </div>
+
+        <div id="content-en" style="display: none;">
+            <h1>Alef Baa Taa Publishers</h1>
+            <p>An educational institution dedicated to producing and distributing educational tools and stories.</p>
+            <div class="links">
+                <a href="https://abc-publishers.com/" class="btn" target="_blank"><i class="fas fa-globe"></i> Official Website</a>
+                <a href="https://wa.me/962795626802" class="btn" target="_blank"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
+                <a href="https://www.facebook.com/alefbaataaa/" class="btn" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://www.instagram.com/abcpublishing/" class="btn" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://x.com/abcpublishers" class="btn" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+                <a href="رابط_الكتالوج_هنا" class="btn btn-catalog" target="_blank"><i class="fas fa-file-pdf"></i> Download Catalog</a>
+            </div>
         </div>
 
         <div class="social">
-            <a href="https://x.com/abcpublishers" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="mailto:abcpublishing@hotmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+962795626802"><i class="fas fa-phone"></i></a>
+            <a href="mailto:abcpublishing@hotmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+962795626802" title="Phone"><i class="fas fa-phone"></i></a>
+            <a href="https://wa.me/962795626802" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
-    <footer>© 2026 جميع الحقوق محفوظة لدار ألف باء تاء ناشرون</footer>
+
+    <footer id="footerText">
+        © 2026 جميع الحقوق محفوظة لدار ألف باء تاء ناشرون
+    </footer>
+
+    <script>
+        function toggleLang() {
+            const body = document.body;
+            const html = document.documentElement;
+            const btn = document.getElementById('langBtn');
+            const arContent = document.getElementById('content-ar');
+            const enContent = document.getElementById('content-en');
+            const footer = document.getElementById('footerText');
+
+            if (html.dir === "rtl") {
+                // تحويل للإنجليزية
+                html.dir = "ltr";
+                html.lang = "en";
+                btn.innerText = "عربي";
+                arContent.style.display = "none";
+                enContent.style.display = "block";
+                footer.innerText = "© 2026 Alef Baa Taa Publishers. All rights reserved.";
+            } else {
+                // تحويل للعربية
+                html.dir = "rtl";
+                html.lang = "ar";
+                btn.innerText = "English";
+                arContent.style.display = "block";
+                enContent.style.display = "none";
+                footer.innerText = "© 2026 جميع الحقوق محفوظة لدار ألف باء تاء ناشرون";
+            }
+        }
+    </script>
 </body>
 </html>
